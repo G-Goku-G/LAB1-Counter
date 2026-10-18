@@ -41,8 +41,8 @@ int main(int argc, char **argv, char **env){
         // ---- end of Vbuddy output section
 
         // change input stimuli
-        top->rst = (i < 2) || (i == 100);
-        top->en = (i < 11) || ((i > 12) && (i < 150)) || !(i > 150);
+        top->rst = (i < 2);
+        top->en = ((i > 1) && (i < 150)) || !(i > 150);
         if (Verilated::gotFinish()) exit(0);
     }
 
