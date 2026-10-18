@@ -26,7 +26,7 @@ int main(int argc, char **argv, char **env){
     top->en = 0;
 
     //run simulation for many clock cycles
-    for (i = 0; i < 300; i++){
+    for (i = 0; i < 30; i++){
 
         //dump variables into VCD file and toggle clock
         for (clk = 0; clk < 2; clk++){
@@ -36,7 +36,7 @@ int main(int argc, char **argv, char **env){
         }
 
         // ++++ Send count value to Vbuddy
-        vbdHex(4, (int(top->count) >> 16) & 0xF);
+        vbdHex(4, (int(top->count) >> 12) & 0xF);
         vbdHex(3, (int(top->count) >> 8) & 0xF);
         vbdHex(2, (int(top->count) >> 4) & 0xF);
         vbdHex(1, int(top->count) & 0xF);
