@@ -42,7 +42,7 @@ int main(int argc, char **argv, char **env){
 
         // change input stimuli
         top->rst = (i < 2);
-        top->en = ((i > 1) && (i < 150)) || !(i > 150);
+        top->en = vbdFlag();
         if (Verilated::gotFinish()) exit(0);
     }
 
