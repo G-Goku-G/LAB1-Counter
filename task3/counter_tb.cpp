@@ -23,7 +23,6 @@ int main(int argc, char **argv, char **env){
     //initialize simulation inputs
     top->clk = 1;
     top->rst = 1;
-    top->v = vbdValue();
     top->ld = vbdFlag();
     vbdSetMode(1);
 
@@ -45,7 +44,6 @@ int main(int argc, char **argv, char **env){
         // change input stimuli
         top->rst = (i == 0);
         top->ld = vbdFlag();
-        top->v = vbdValue();
         if (Verilated::gotFinish()) exit(0);
     }
 
